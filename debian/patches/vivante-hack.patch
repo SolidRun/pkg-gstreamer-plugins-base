@@ -1,0 +1,15 @@
+diff --git a/gst-libs/gst/gl/egl/gstgldisplay_egl.c b/gst-libs/gst/gl/egl/gstgldisplay_egl.c
+index af063517..41f39e5c 100644
+--- a/gst-libs/gst/gl/egl/gstgldisplay_egl.c
++++ b/gst-libs/gst/gl/egl/gstgldisplay_egl.c
+@@ -122,9 +122,7 @@ gst_gl_display_egl_get_from_native (GstGLDisplayType type, guintptr display)
+     goto default_display;
+ 
+   /* check if we can actually choose the egl display type */
+-  if (!gst_gl_check_extension ("EGL_KHR_client_get_all_proc_addresses",
+-          egl_exts))
+-    goto default_display;
++  /* Don't check for EGL_KHR_client_get_all_proc_addresses - because Vivante EGL doesn't report support :( */
+   if (!gst_gl_check_extension ("EGL_EXT_platform_base", egl_exts))
+     goto default_display;
+ 
