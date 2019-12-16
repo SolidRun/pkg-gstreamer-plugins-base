@@ -32,6 +32,7 @@ endif
 conf_flags = --libdir=lib/$(DEB_HOST_MULTIARCH) --libexecdir=lib/$(DEB_HOST_MULTIARCH)/gstreamer1.0
 conf_flags += -Dpackage-name=$(GST_PACKAGE_NAME) -Dpackage-origin=$(GST_PACKAGE_ORIGIN)
 conf_flags += -Dinstall_plugins_helper="/usr/bin/gstreamer-codec-install"
+conf_flags += -Dgl_api=gles2,opengl
 
 %:
 	dh $@ --with gir --buildsystem=meson
