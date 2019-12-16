@@ -168,6 +168,9 @@ ifneq ($(filter $(gst_pkgname)-doc,$(binaries)),)
 DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc
 endif
 
+# Build for both OpenGL and OpenGL-ES
+DEB_CONFIGURE_EXTRA_FLAGS += --enable-gles2 --enable-opengl
+
 clean::
 	# get rid of the symlinks
 	for i in $(PLUGINS); do \
